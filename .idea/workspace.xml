@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="41ff064b-41ff-42d8-90ab-35b04227e6f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Planer" beforeDir="false" afterPath="$PROJECT_DIR$/../Planer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../iteratorEnumConnecor/src/EnumerationIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../iteratorEnumConnecor/src/EnumerationIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Controller/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Domain/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Domain/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Exeptions/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/Exeptions/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/amazons3client/AmazonClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/amazons3client/AmazonClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/repo/MessageRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rogueWebApp/src/main/java/rogue/rogueWebApp/repo/MessageRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/js/components/messages/MessageForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/js/components/messages/MessageList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/js/components/messages/MessageRow.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/js/pages/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/templates/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rogueWebApp/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sweater" beforeDir="false" afterPath="$PROJECT_DIR$/../sweater" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/CellingFan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/CellingFan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/GarageDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/GarageDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/Light.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/RemoteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/RemoteLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/RemoteLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/SimpleRemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/SimpleRemoteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/src/Stereo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled1/src/Stereo.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="209" />
+    <option name="y" value="-6" />
+    <option name="width" value="1615" />
+    <option name="height" value="1092" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tortiko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tortiko" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="41ff064b-41ff-42d8-90ab-35b04227e6f4" name="Default Changelist" comment="" />
+      <created>1596804405990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596804405990</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20682302" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Build" visible="true" weight="0.34199134" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+</project>
