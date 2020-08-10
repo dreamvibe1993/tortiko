@@ -27,7 +27,11 @@ public class ProductController {
     }
     @RequestMapping(value = "/upload-product", method = RequestMethod.POST)
     public Product createProduct(@RequestBody Product product)  {
-        product.setId(new Random().nextLong());
+        product.setProductId(new Random().nextLong());
         return productRepository.save(product);
+    }
+    @DeleteMapping("products/{productId}")
+    public void deleteProduct(@PathVariable("productId") Product product){
+        productRepository.delete(product);
     }
 }
