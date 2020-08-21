@@ -25,9 +25,13 @@ public class UserController {
         return userRepository.save(user);
     }
 
-
     @DeleteMapping("users/{userId}")
     public void deleteProduct(@PathVariable("userId") User user){
         userRepository.delete(user);
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
     }
 }
