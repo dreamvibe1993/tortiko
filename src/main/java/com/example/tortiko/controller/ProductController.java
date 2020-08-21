@@ -17,10 +17,10 @@ public class ProductController {
     public ProductController(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
-    @GetMapping("{id}")
+    /*@GetMapping("{id}")
     public Product getOne(@PathVariable("id") Product product){
         return product;
-    }
+    }*/
     @RequestMapping(value = "/get-products", method = RequestMethod.GET)
     public List<Product> productList(){
         return productRepository.findAll();

@@ -35,6 +35,14 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "enabled")
+    private Boolean enabled;
+
+    public User() {
+        super();
+        this.enabled=false;
+    }
+
     public Long getUserId() {
         return userId;
     }

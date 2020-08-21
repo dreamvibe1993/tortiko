@@ -3,7 +3,9 @@ package com.example.tortiko.controller;
 import com.example.tortiko.model.User;
 import com.example.tortiko.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.Random;
 
@@ -22,6 +24,8 @@ public class UserController {
         user.setUserId(new Random().nextLong());
         return userRepository.save(user);
     }
+
+
     @DeleteMapping("users/{userId}")
     public void deleteProduct(@PathVariable("userId") User user){
         userRepository.delete(user);
