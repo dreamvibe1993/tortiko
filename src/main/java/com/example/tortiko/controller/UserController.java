@@ -20,13 +20,14 @@ public class UserController {
     }
 
     @RequestMapping(value = "/create-user", method = RequestMethod.POST)
-    public User createUser(@RequestBody User user)  {
+    public String createUser(@RequestBody User user)  {
         user.setUserId(new Random().nextLong());
-        return userRepository.save(user);
+        userRepository.save(user);
+        return "/";
     }
 
     @DeleteMapping("users/{userId}")
-    public void deleteProduct(@PathVariable("userId") User user){
+    public void deleteUser(@PathVariable("userId") User user){
         userRepository.delete(user);
     }
 

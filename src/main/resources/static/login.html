@@ -24,31 +24,17 @@
             <button type="submit" class="submit-btn">Log in</button>
         </form>
         <form id="register"  class="input-group">
-            <input type="text" class="input-field" placeholder="Enter E-mail" required>
-            <input type="text" class="input-field" placeholder="Enter Password" required>
-            <input type="text" class="input-field" placeholder="Confirm Password" required>
+
+            <input id="email" type="email"  class="input-field" placeholder="Enter E-mail" required>
+            <input id="password" type="password" class="input-field" placeholder="Enter Password" required>
+            <input id="confirm_password" type="password" class="input-field" placeholder="Confirm Password" required>
             <input type="checkbox" class="login-checkbox">
             <span>I agree to the Terms and Conditions</span>
-            <button type="submit" class="submit-btn">Register</button>
+            <button id="submit_btn" type="submit" class="submit-btn">Register</button>
         </form>
-
     </div>
 </div>
-<script>
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-    var z = document.getElementById("btn");
+<script src="login.js"></script>
 
-    function register(){
-        x.style.left = "-450px";
-        y.style.left = "50px";
-        z.style.left = "110px";
-    }
-    function login(){
-        x.style.left = "50px";
-        y.style.left = "450px";
-        z.style.left = "0px";
-}
-</script>
 </body>
 </html>

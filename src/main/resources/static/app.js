@@ -23,3 +23,6 @@ const navSlide = () => {
 
 }
 navSlide();
+
+const submitButton = document.querySelector('.submit-button');
+
