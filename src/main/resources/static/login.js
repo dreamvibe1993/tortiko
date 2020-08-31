@@ -1,40 +1,59 @@
 
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById("password")
-const passwordInputConfirm = document.getElementById("confirm_password")
-const submitButton = document.getElementById('submit_btn');
+const loginEmail = document.getElementById('login_email');
+const loginPassword = document.getElementById("login_password")
+const loginSubmitButton = document.getElementById('login-btn');
+
+const emailInput = document.getElementById('register_email');
+const passwordInput = document.getElementById("register_password")
+const passwordInputConfirm = document.getElementById("register_confirm_password")
+const registerSubmitButton = document.getElementById('register-btn');
 
 // Password validation form
 function validatePassword(){
   if(passwordInput.value != passwordInputConfirm.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
+    register_confirm_password.setCustomValidity("Passwords Don't Match");
   } else {
-    confirm_password.setCustomValidity('');
+    register_confirm_password.setCustomValidity('');
   }
 }
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+register_password.onchange = validatePassword;
+register_confirm_password.onkeyup = validatePassword;
 
 
-function handleSubmitButton() {
+function registerButton() {
         const body = {
-            email: emailInput.value,
-            password: passwordInput.value,
+            email: loginEmail.value,
+            password: loginPassword.value,
         };
 
-        fetch('http://localhost:8080/create-user', {
+        fetch('http://localhost:8080/api/users/create-user', {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
                 'Content-Type': 'application/json',
             }
         })
-console.log(body);
 }
-submitButton.addEventListener('click', handleSubmitButton);
+registerSubmitButton.addEventListener('click', registerButton);
+function loginButton() {
+        const body = {
+            email: emailInput.value,
+            password: passwordInput.value,
+        };
+
+        fetch('http://localhost:8080/login', {
+            method: 'POST',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        console.log(body);
+}
+
+loginSubmitButton.addEventListener('click', loginButton);
 
 
-//login - registration change buttons
 var x = document.getElementById("login");
 var y = document.getElementById("register");
 var z = document.getElementById("btn");

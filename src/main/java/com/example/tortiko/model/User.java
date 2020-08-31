@@ -3,6 +3,8 @@ package com.example.tortiko.model;
 
 import javax.persistence.*;
 
+import static com.example.tortiko.config.UserRoles.USER;
+
 @Entity
 @Table(name="users", schema = "public")
 public class User {
@@ -38,9 +40,13 @@ public class User {
     @Column(name = "enabled")
     private Boolean enabled;
 
+    @Column(name = "role")
+    private String UserRoles;
+
     public User() {
         super();
         this.enabled=false;
+        this.UserRoles = USER.name();
     }
 
     public Long getUserId() {

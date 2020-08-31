@@ -19,20 +19,19 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @RequestMapping(value = "/create-user", method = RequestMethod.POST)
-    public String createUser(@RequestBody User user)  {
+    @RequestMapping(value = "api/users/create-user", method = RequestMethod.POST)
+    public User createUser(@RequestBody User user)  {
         user.setUserId(new Random().nextLong());
-        userRepository.save(user);
-        return "/";
+
+        return userRepository.save(user);
     }
 
-    @DeleteMapping("users/{userId}")
+    @DeleteMapping("api/users/{userId}")
     public void deleteUser(@PathVariable("userId") User user){
         userRepository.delete(user);
     }
 
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
+
+
+
 }

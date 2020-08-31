@@ -21,16 +21,16 @@ public class ProductController {
     public Product getOne(@PathVariable("id") Product product){
         return product;
     }*/
-    @RequestMapping(value = "/get-products", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/get-products", method = RequestMethod.GET)
     public List<Product> productList(){
         return productRepository.findAll();
     }
-    @RequestMapping(value = "/upload-product", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/upload-product", method = RequestMethod.POST)
     public Product createProduct(@RequestBody Product product)  {
         product.setProductId(new Random().nextLong());
         return productRepository.save(product);
     }
-    @DeleteMapping("products/{productId}")
+    @DeleteMapping("api/products/{productId}")
     public void deleteProduct(@PathVariable("productId") Product product){
         productRepository.delete(product);
     }
