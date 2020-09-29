@@ -32,6 +32,7 @@ nav{
    color: rgb(226, 226, 226);
    text-decoration: none;
    letter-spacing: 3px;
+   cursor: pointer;
 }
 
 .nav-links li{
@@ -115,6 +116,7 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 0;
 }
 #showcase h1{
     font-size: 45px;
@@ -136,29 +138,71 @@ nav{
     transition: .5s;
     color: black;
 
+
 }
 .showcase-text{
     margin-left: 15%;
     margin-right: 15%;
 }
-.login-page{
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("background.jpg");
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    font-family: 'Raleway', sans-serif;
+
+/* переключатель стилей */
+
+.off {
+  display: none;
 }
+
+.on {
+  animation-name: login-form-appearing;
+  animation-duration: 0.6s;
+}
+.anim {
+  animation-name: login-form-disappearing;
+  animation-duration: 0.6s;
+}
+
+/* переключатель стилей */
+
+/* тёмный задний фон */
+
+.darken {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+}
+
+/* тёмный задний фон */
+
+/* анимация формы */
+
+@keyframes login-form-appearing {
+  0% { transform: translateY(-2000px); }
+  70% { transform: translateY(30px); }
+  90% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes login-form-disappearing {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-2000px); }
+}
+
+/* анимация формы */
+
 
 .login-form-box{
     width: 380px;
     height: 480px;
-    position: relative;
-    margin: 6% auto;
+    position: absolute;
+    left:50%;
+    margin-left:-190px;
     background: #fff;
     padding: 5px;
     overflow: hidden;
+    z-index: 9;
 }
 .login-button-box{
     width: 220px;
@@ -175,6 +219,7 @@ nav{
     outline: none;
     position: relative;
     left: 6px;
+
 }
 
 #btn{
