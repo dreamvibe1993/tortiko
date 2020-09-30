@@ -58,17 +58,16 @@ select {
   min-width: 40%;
   outline: none;
   border: none;
-  background-color: #67b1db;
+  background: linear-gradient(to right, #DB7F67, #FCD757);
   height: 3em;
   border-radius: 5px;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
 .b-st:hover {
-  background-color: #9ccbe6;
-  transition-property: background-color;
-  transition-duration: 0.4s;
+  background: linear-gradient(to right, #d17962, #edca51);
+
 }
 
 .ord-fin {
@@ -81,9 +80,130 @@ select {
   text-align: center;
 }
 
-.online-assistance {
-  position: absolute;
+/* techsupport modal */
+
+#techCross {
+  display: block;
+  cursor: pointer;
 }
+
+.tech-modal-off {
+  display: none;
+}
+
+.tech-modal-on {
+  display: flex;
+  animation-name: techsupport-anim;
+  animation-duration: 0.9s;
+}
+
+.tech-anim-out {
+  animation-name: techsupport-anim-out;
+  animation-duration: 0.9s;
+}
+
+.techquest-off {
+  display: none;
+}
+
+.techquest-on {
+  animation-name: techsupport-anim;
+  animation-duration: 0.9s;
+}
+
+@keyframes techsupport-anim {
+  0% {right: -900px}
+    20% {right: 2px}
+      40% {right: 15px}
+        70% {right: 8px}
+          100% {right: 10px}
+}
+
+@keyframes techsupport-anim-out {
+  100% {right: -900px}
+    70% {right: 2px}
+      40% {right: 15px}
+        20% {right: 8px}
+          0% {right: 10px}
+}
+
+.techsupport-summoner {
+  width: 50px;
+  height: 50px;
+  color: white;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 11;
+  cursor: pointer;
+}
+
+.online-assistance {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10;
+  background: linear-gradient(to top, rgba(173, 99, 80, 0.8), rgba(219, 127, 103, 1));
+  min-width: 15%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 10px;
+  min-height: 40%;
+  border-radius: 10px;
+  color: white;
+}
+
+.techsupport-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background-color:
+}
+
+.form-chat {
+  display: flex;
+  min-height: 250px;
+  background-color: white;
+  margin-top: 5px;
+  margin: 0;
+}
+
+.techsupport-footer {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.send-plane {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  padding: 5px;
+  border: none;
+  background: #ffd900;
+  align-self: stretch;
+  transition-property: background;
+  transition-duration: 0.2s;
+}
+
+.send-plane:hover {
+  background: #f2cf00;
+}
+
+.input-container {
+  width: 85%;
+  background: #f2f2f2;
+  border: none;
+  padding: 8px;
+  outline: none;
+  margin: 0;
+  color: black;
+  min-height: 35px;
+}
+
+/* techsupport modal */
 
 .status-select {
   width: 70%;
@@ -100,7 +220,6 @@ select {
 }
 
 .order-status-modal {
-
  position: absolute;
  flex-direction: column;
  align-items: center;
