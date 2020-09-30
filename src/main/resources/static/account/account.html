@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="account.css">
+    <title>Account</title>
+</head>
+
+<body>
+  <nav>
+      <div class="logo">
+          <h4>TORTIKO</h4>
+      </div>
+      <ul class="nav-links">
+          <li>
+              <a href="#">Home</a>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="#">Shop</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+          <li></li>
+          <li>
+              <a href="../index-version-1.html">Выход</a>
+          </li>
+          <li></li>
+      </ul>
+      </nav>
+      <!-- корзина, статус и история заказов, задать вопрос в чате -->
+      <main class='user-friendly'>
+        <section class='content'>
+        <div class="cart">
+          <h3>Ваша корзина</h3>
+          <div class="cart ordered">
+          <select size='15' multiple class="order-select" name="">
+            <option value="">
+              Торт 1
+            </option>
+            <option value="">
+              Торт 2
+            </option>
+          </select>
+          <section class="buttons">
+          <button class='b-st' id="cartButtonAdds" type="button">Добавить</button>
+          <button class='b-st' id="cartButtonRemoves" type="button">Удалить</button>
+          </section>
+          <button class='b-st ord-fin' id="cartButtonOrderCompletion" type="button">Завершить заказ</button>
+          </div>
+        </div>
+        <div class="order-status">
+          <h3>Статус и история заказов</h3>
+          <select size='15' class="status-select" name="">
+            <option ondblclick="addOrderModal()">Торт 1</option>
+            <option ondblclick="addOrderModal()">Торт 2</option>
+          </select>
+          <p>*Двойной клик по заказу, чтобы узнать его статус</p>
+        </div>
+      </section>
+
+      <!-- окно статуса заказа -->
+      <div id='statusModBox' class="order-status-modal off">
+        <h3>Cтатус заказа</h3>
+        <textarea name="status" rows="30" cols="80"></textarea>
+        <button id='statusModBoxRmv' class="b-st" type="button" name="button">Закрыть</button>
+      </div>
+      <!-- окно статуса заказа -->
+
+      <!-- затемнялка экрана -->
+
+      <div id=darken class="darken off"></div>
+      </main>
+
+      <!-- затемнялка экрана -->
+
+      <!-- окно чата техподдержки -->
+
+      <!-- <div class="online-assistance">
+        <img src="" alt="закрыть">
+        <h3>Задать вопрос в чате</h3>
+        <textarea class="form-chat" rows="3"></textarea>
+        <input type="text" name="" value="" placeholder="Введите ваш вопрос здесь">
+        <button type="button" name="button">Отправить</button>
+      </div> -->
+
+      <!-- окно чата техподдержки -->
+
+    <script src="app.js"></script>
+    <script>
+    // код для появления статуса заказа
+    function removeOrderModal() {
+      statusModBox.classList.add('off');
+      statusModBox.classList.remove('on');
+      statusModBox.classList.remove('anim');
+      darken.classList.toggle('off');
+    }
+
+    function addOrderModal() {
+      statusModBox.classList.remove('off');
+      statusModBox.classList.add('on');
+      darken.classList.toggle('off');
+    }
+
+
+    statusModBoxRmv.onclick = () => {
+      statusModBox.classList.add('anim');
+      setTimeout(removeOrderModal, 500);
+    }
+
+    darken.onclick = () => {
+      statusModBox.classList.add('anim');
+      setTimeout(removeOrderModal, 500);
+    }
+    window.addEventListener("keydown", function (evt) {
+      if (statusModBox.classList.contains('on')) {
+        if (evt.keyCode === 27) {
+          evt.preventDefault();
+          statusModBox.classList.add('anim');
+          setTimeout(remove, 500);
+        }
+      }
+    });
+    // todo код для появления статуса заказа 
+
+    function removeItemCart() {
+      let orderSelect = document.querySelector('select');
+      if (orderSelect.childNodes.) {
+        cardButtonRemoves.onclick = () => {
+          orderSelect.childNodes.selected.remove();
+        }
+      }
+    }
+    removeItemCart();
+    </script>
+
+
+</body>
+</html>

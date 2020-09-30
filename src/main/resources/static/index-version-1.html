@@ -82,36 +82,8 @@
 
     <script src="app.js"></script>
     <script src="login.js"></script>
-    <!-- скрипт для появления и закрытия формы -->
-    <script>
-
-    function remove() {
-      lgnBox.classList.add('off');
-      lgnBox.classList.remove('on');
-      lgnBox.classList.remove('anim');
-      darken.classList.toggle('off');
-    }
-
-    function add() {
-      lgnBox.classList.remove('off');
-      lgnBox.classList.add('on');
-      darken.classList.toggle('off');
-    }
-
-    lgnButton.onclick = add;
-    darken.onclick = () => {
-      lgnBox.classList.add('anim');
-      setTimeout(remove, 500);
-    }
-    window.addEventListener("keydown", function (evt) {
-      if (evt.keyCode === 27) {
-        evt.preventDefault();
-        lgnBox.classList.add('anim');
-        setTimeout(remove, 500);
-      }
-    });
-
-    </script>
+    <!-- скрипт для появления и закрытия модалки логина -->
+    <script src="interaction.js"></script>
 
 
 
