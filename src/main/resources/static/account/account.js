@@ -69,30 +69,51 @@ techCross.onclick = () => {
 
 // techsupport modal summoner code
 
+// techsupport modal chatwindow - inputfield interaction code
+
 inptContainer.onclick = () => {
   if (inptContainer.innerHTML == 'Type here') {
     inptContainer.innerHTML = '';
+    inptContainer.addEventListener('keydown', function(e) {
+    	if (!e.shiftKey && e.keyCode === 13) {
+        //str transform block
+        var str = inptContainer.innerText;
+        var ans = '';
+        for (let i = 0; i <= str.length; i++) {
+          if (i == 10) {
+            ans += `${str.slice(0, i)}\n`;
+            str =  `${str.slice(i)}`;
+            i -= i;
+            }
+            inptContainer.innerText = `${ans}${str}`;
+        }
+
+        // TODO: spacekey control + window cursor out
+
+        //str transform block
+      	console.log('sending a message');
+        chatMsgWindow.insertAdjacentHTML('beforeend', `<div class="chat-second-line"><div id="clientMsg" class="message">${inptContainer.innerText}</div></div>`);
+        inptContainer.innerHTML = '';
+        chatMsgWindow.scrollTop += chatMsgWindow.clientHeight;
+        e.preventDefault();
+      }
+    });
   }
 };
 
+// techsupport modal chatwindow - inputfield interaction code
+
 
 window.onclick = function(event) {
-  if (event.target.id != inptContainer && inptContainer.innerHTML == '') {
+  if (event.target.id != 'inptContainer' && inptContainer.innerHTML == '') {
     inptContainer.innerHTML = 'Type here';
   }
 };
 
 
+// techsupport modal chatwindow - inputfield interaction code
 
-window.addEventListener('keydown', function(evt) {
-  if (evt.code === 13) {
-    evt.preventDefault();
-    console.log('meaow');
-  }
-});
+
+
 
 //TODO 'typehere remover code'
-
-// if (inptContainer.innerHTML = '') {
-//   inptContainer.innerHTML = 'Type here';
-// }
