@@ -1,36 +1,36 @@
 // код для появления статуса заказа
-function removeOrderModal() {
-  statusModBox.classList.add('off');
-  statusModBox.classList.remove('on');
-  statusModBox.classList.remove('anim');
-  darken.classList.toggle('off');
-}
-
-function addOrderModal() {
-  statusModBox.classList.remove('off');
-  statusModBox.classList.add('on');
-  darken.classList.toggle('off');
-}
-
-
-statusModBoxRmv.onclick = () => {
-  statusModBox.classList.add('anim');
-  setTimeout(removeOrderModal, 500);
-}
-
-darken.onclick = () => {
-  statusModBox.classList.add('anim');
-  setTimeout(removeOrderModal, 500);
-}
-window.addEventListener("keydown", function (evt) {
-  if (statusModBox.classList.contains('on')) {
-    if (evt.keyCode === 27) {
-      evt.preventDefault();
-      statusModBox.classList.add('anim');
-      setTimeout(remove, 500);
-    }
-  }
-});
+// function removeOrderModal() {
+//   statusModBox.classList.add('off');
+//   statusModBox.classList.remove('on');
+//   statusModBox.classList.remove('anim');
+//   darken.classList.toggle('off');
+// }
+//
+// function addOrderModal() {
+//   statusModBox.classList.remove('off');
+//   statusModBox.classList.add('on');
+//   darken.classList.toggle('off');
+// }
+//
+//
+// statusModBoxRmv.onclick = () => {
+//   statusModBox.classList.add('anim');
+//   setTimeout(removeOrderModal, 500);
+// }
+//
+// darken.onclick = () => {
+//   statusModBox.classList.add('anim');
+//   setTimeout(removeOrderModal, 500);
+// }
+// window.addEventListener("keydown", function (evt) {
+//   if (statusModBox.classList.contains('on')) {
+//     if (evt.keyCode === 27) {
+//       evt.preventDefault();
+//       statusModBox.classList.add('anim');
+//       setTimeout(remove, 500);
+//     }
+//   }
+// });
 // todo order status summoner code
 
 // function removeItemCart() {
