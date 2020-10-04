@@ -112,8 +112,14 @@ window.onclick = function(event) {
 
 
 // techsupport modal chatwindow - inputfield interaction code
-
-
-
-
 //TODO 'typehere remover code'
+
+
+// account heightchanger code
+accAccount.onclick = () => {
+  accAccount.classList.add('acc-height-changer');
+  setTimeout(function() {
+    accSettings.classList.remove('off');
+    accSettings.classList.add('settings-on');
+  },500);
+}
