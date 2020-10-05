@@ -30,10 +30,8 @@ public class UserController {
     public String createUser(@RequestBody UserDTO user)  {
         User newUser = new User();
         newUser.setUserId(UUID.randomUUID().toString());
-        System.out.println("generated ID is :" + newUser.getUserId());
         newUser.setUsername(user.getUsername());
-        //newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-        newUser.setPassword(user.getPassword());
+        newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
         userRepository.save(newUser);
         return "redirect:/api/users/{userId}";
     }

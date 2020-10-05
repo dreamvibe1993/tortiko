@@ -25,11 +25,6 @@ function registerButton() {
             email: loginEmail.value,
             password: loginPassword.value,
         };
-        const bodyRegister = {
-            email: emailInput.value,
-            password: passwordInput.value,
-        };
-
         fetch('http://localhost:8080/api/users/create-user', {
             method: 'POST',
             body: JSON.stringify(bodyRegister),
@@ -40,11 +35,10 @@ function registerButton() {
 }
 registerSubmitButton.addEventListener('click', registerButton);
 function loginButton() {
-        const body = {
-            email: emailInput.value,
+        const bodyRegister = {
+            username: emailInput.value,
             password: passwordInput.value,
         };
-
         fetch('http://localhost:8080/login', {
             method: 'POST',
             body: JSON.stringify(body),
