@@ -21,7 +21,7 @@ register_confirm_password.onkeyup = validatePassword;
 
 
 function registerButton() {
-        const bodyLogin = {
+        const Register = {
             email: loginEmail.value,
             password: loginPassword.value,
         };
@@ -35,7 +35,7 @@ function registerButton() {
 }
 registerSubmitButton.addEventListener('click', registerButton);
 function loginButton() {
-        const bodyRegister = {
+        const bodyLogin = {
             username: emailInput.value,
             password: passwordInput.value,
         };
