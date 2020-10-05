@@ -10,21 +10,30 @@ const registerSubmitButton = document.getElementById('register-btn');
 
 // Password validation form
 function validatePassword(){
-  if(passwordInput.value != passwordInputConfirm.value) {
+  if (passwordInput.value != passwordInputConfirm.value) {
     register_confirm_password.setCustomValidity("Passwords Don't Match");
   } else {
-    register_confirm_password.setCustomValidity('');
+      register_confirm_password.setCustomValidity('');
   }
+
+  if (!registerCheckbox.checked) {
+    registerCheckbox.setCustomValidity("The checkbox's nescessary");
+  } else {
+      registerCheckbox.setCustomValidity('');
+  }
+
 }
 register_password.onchange = validatePassword;
 register_confirm_password.onkeyup = validatePassword;
 
 
 function registerButton() {
-        const bodyLogin = {
-            email: loginEmail.value,
-            password: loginPassword.value,
+
+        const bodyRegister = {
+            username: emailInput.value,
+            password: passwordInput.value,
         };
+
         fetch('http://localhost:8080/api/users/create-user', {
             method: 'POST',
             body: JSON.stringify(bodyRegister),
@@ -33,20 +42,29 @@ function registerButton() {
             }
         })
 }
-registerSubmitButton.addEventListener('click', registerButton);
+
+registerSubmitButton.addEventListener('click', function() {
+        (passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true) ? registerButton() : validatePassword();
+});
+registerCheckbox.onclick = () => {
+  registerCheckbox.setCustomValidity('');
+}
+
+
 function loginButton() {
-        const bodyRegister = {
-            username: emailInput.value,
-            password: passwordInput.value,
+
+        const bodyLogin = {
+            email: loginEmail.value,
+            password: loginPassword.value,
         };
+
         fetch('http://localhost:8080/login', {
             method: 'POST',
-            body: JSON.stringify(body),
+            body: JSON.stringify(bodyLogin),
             headers: {
                 'Content-Type': 'application/json',
             }
         })
-        console.log(body);
 }
 
 loginSubmitButton.addEventListener('click', loginButton);
