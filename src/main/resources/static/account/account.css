@@ -13,6 +13,8 @@ nav{
   "top top top"
   "account status status"
   "cart shop shop";
+  /* grid-template-rows: 9.6vh 30.3vh 1fr;
+  grid-template-columns: 35vh 1fr 1fr; */
   grid-template-rows: 77.52px 245.25px 1fr;
   grid-template-columns: 283px 1fr 1fr;
   /* grid-template-rows: 8vh 25vh 1fr;
@@ -84,67 +86,113 @@ select {
   width: 100%;
   background: rgba(255, 255, 255, .8);
   border-radius: 10px;
+  cursor: pointer;
 }
 .acc-accont:hover {
   background: rgba(222, 222, 222, .8);
 }
 
-@keyframes heightTransform {
-  0% { height: 140px; }
+@keyframes heightTransformDown {
+  0% { height: 145px; }
       100% { height: 193px; }
 }
 
-@keyframes settingsOpacity {
+@keyframes heightTransformUp {
+  0% { height: 193px; }
+    100% { height: 145px; }
+}
+
+@keyframes settingsOpacityIn {
   0% { opacity: 0; }
       100% { opacity: 1; }
 }
 
-.acc-height-changer{
-  animation-name: heightTransform;
-  animation-duration: 0.6s;
-  height: 193px;
+@keyframes settingsOpacityOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
+
+
+.acc-height-changer-down{
+  animation-name: heightTransformDown;
+  animation-duration: 0.6s;
+}
+
+.acc-height-changer-up{
+  animation-name: heightTransformUp;
+  animation-duration: 0.6s;
+}
+
+.settings-on {
+  animation-name: settingsOpacityIn;
+  animation-duration: 0.2s;
+}
+
+.settings-off {
+  animation-name: settingsOpacityOut;
+  animation-duration: 0.2s;
+}
+
+.settings-display-flex {
+  display: flex;
+}
+
+.settings-display-none {
+  display: none;
+}
+
+
+.settings {
+  margin-top: 5px;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
 .user-info {
   display: flex;
   width: 100%;
   align-items: flex-start;
 }
 
-.infos {
+.clickme {
+  font-size: 8px;
+}
+.username {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+
+}
+
+.infos {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin-left: 10px;
 }
 
 .online-circle {
   border-radius: 50%;
+  margin: 5px;
   width: 5px;
   height: 5px;
 }
 
-.settings {
-  margin-top: 5px;
-  font-size: 12px;
-  justify-content: space-between;
-  opacity: 0;
-}
 
 .settings img{
   padding: 8px;
   width: 40px;
   height: 40px;
 }
-
-.settings-on {
-  display: flex;
-  animation-name: settingsOpacity;
-  animation-duration: 0.2s;
-  opacity: 1;
-}
-
-
 
 
 
@@ -442,8 +490,21 @@ padding: 2px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 }
+.shop-grid > div:hover {
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(255, 189, 145, .2);
+
+}
 
 .shop-grid > div {
+  display: flex;
+}
+.shop-grid p {
+  padding: 5px;
+}
+.cake-description {
+  font-size: 12px;
 }
 
 /* shop ends here*/

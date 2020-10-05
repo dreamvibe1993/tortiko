@@ -116,10 +116,33 @@ window.onclick = function(event) {
 
 
 // account heightchanger code
-accAccount.onclick = () => {
-  accAccount.classList.add('acc-height-changer');
-  setTimeout(function() {
-    accSettings.classList.remove('off');
-    accSettings.classList.add('settings-on');
-  },500);
+function transformAccField() {
+  let status = false;
+  accAccount.onclick = () => {
+    if (!status) {
+      accAccount.classList.remove('acc-height-changer-up');
+      accAccount.classList.add('acc-height-changer-down');
+      setTimeout(function() {
+        accSettings.classList.add('settings-display-flex');
+        accSettings.classList.remove('settings-display-none');
+        accSettings.classList.toggle('settings-off');
+        accSettings.classList.toggle('settings-on');
+        return status = true;
+      }, 500);
+    }
+    if (status) {
+      accSettings.classList.toggle('settings-off');
+      accSettings.classList.toggle('settings-on');
+      setTimeout(function() {
+        accSettings.classList.remove('settings-display-flex');
+        accSettings.classList.add('settings-display-none');
+        accAccount.classList.remove('acc-height-changer-down');
+        accAccount.classList.add('acc-height-changer-up');
+        return status = false;
+      }, 150);
+    }
+    return status;
+  }
 }
+transformAccField();
+// account heightchanger code ends here
