@@ -37,6 +37,8 @@ nav{
   grid-area: account;
     margin-left: 10px;
     padding: 10px;
+    box-shadow: 0px 2px 0px 0px #c77f6b;
+
 
 
 }
@@ -44,6 +46,8 @@ nav{
   grid-area: status;
     margin-right: 10px;
     padding: 10px;
+    box-shadow: 0px 2px 0px 0px #c77f6b;
+
 
 }
 #cart {
@@ -51,6 +55,8 @@ nav{
     margin-left: 10px;
     margin-bottom: 10px;
     padding: 10px;
+    box-shadow: 0px 2px 0px 0px #c77f6b;
+
 
 }
 #shop {
@@ -58,6 +64,8 @@ nav{
     margin-right: 10px;
     margin-bottom: 10px;
     padding: 10px;
+    box-shadow: 0px 2px 0px 0px #c77f6b;
+
 
 }
 
@@ -67,7 +75,6 @@ nav{
   background-repeat: repeat;
   background-position: center;
   border-radius: 10px;
-
 }
 
 

@@ -21,14 +21,18 @@ register_confirm_password.onkeyup = validatePassword;
 
 
 function registerButton() {
-        const body = {
+        const bodyLogin = {
             email: loginEmail.value,
             password: loginPassword.value,
+        };
+        const bodyRegister = {
+            email: emailInput.value,
+            password: passwordInput.value,
         };
 
         fetch('http://localhost:8080/api/users/create-user', {
             method: 'POST',
-            body: JSON.stringify(body),
+            body: JSON.stringify(bodyRegister),
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -68,6 +72,3 @@ function login(){
     y.style.left = "450px";
     z.style.left = "0px";
 }
-
-
-
