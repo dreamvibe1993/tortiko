@@ -1,4 +1,4 @@
-// код для появления и закрытия модалки логина
+// pop-up login form animation
 
 function removeLoginModal() {
   lgnBox.classList.add('off');
@@ -28,4 +28,3 @@ window.addEventListener("keydown", function (evt) {
   }
 });
 
-// код для появления и закрытия модалки логина
