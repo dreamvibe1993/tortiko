@@ -98,9 +98,11 @@ loginSubmitButton.addEventListener('click', function() {
 //     y = true ? pastePassword() : console.log('failed');
 // }
 
+// TODO: the email is checked for mistakes before saving into cookies. if email is wrong = uncheck the box; 
+
 inputCheckbox.onclick = () => {
   if (loginPassword.value && loginEmail.value) {
-    checkCookie(loginEmail.value, loginPassword.value, 365);
+    setCookie(loginEmail.value, loginPassword.value, 365);
   } else {
     validateLogin();
     inputCheckbox.checked = false;
