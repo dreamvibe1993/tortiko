@@ -28,33 +28,31 @@ register_confirm_password.onkeyup = validatePassword;
 
 
 function registerButton() {
-
-        const bodyRegister = {
-            username: emailInput.value,
-            password: passwordInput.value,
-        };
-
-        fetch('http://localhost:8080/api/users/create-user', {
-            method: 'POST',
-            body: JSON.stringify(bodyRegister),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
+    const bodyRegister = {
+        username: emailInput.value,
+        password: passwordInput.value,
+    };
+    fetch('http://localhost:8080/api/users/create-user', {
+        method: 'POST',
+        body: JSON.stringify(bodyRegister),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
 }
 
 registerSubmitButton.addEventListener('click', function() {
         (passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true) ? registerButton() : validatePassword();
 });
 registerCheckbox.onclick = () => {
-  registerCheckbox.setCustomValidity('');
+    registerCheckbox.setCustomValidity('');
 }
 
 
 function loginButton() {
 
         const bodyLogin = {
-            email: loginEmail.value,
+            username: loginEmail.value,
             password: loginPassword.value,
         };
 

@@ -1,41 +1,43 @@
 package com.example.tortiko.config;
 
-import com.example.tortiko.repository.UserRepository;
+import com.example.tortiko.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserDetailsServiceImpl userDetailsServiceImpl;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     @Override
-    public void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/resources/static/**").permitAll()
-                //.antMatchers("api/**").hasRole("ADMIN")
-                .anyRequest().permitAll()
-                .and()
+            .authorizeRequests()
+                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/api/users/create-user").permitAll()
+                .anyRequest().authenticated()
+            .and()
                 .formLogin()
                 .loginPage("/")
-                .defaultSuccessUrl("/index.html", true)
+                .defaultSuccessUrl("/static/test.html", true)
                 .and()
                 .logout()
-                .logoutUrl("/logout");
+                .logoutUrl("/logout")
+                .permitAll();
 
     }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsServiceImpl)
+                .passwordEncoder(passwordEncoder);
     }
+
 
 }

@@ -1,13 +1,16 @@
 package com.example.tortiko.model;
 
 
-import javax.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import static com.example.tortiko.config.UserRoles.USER;
+import javax.persistence.*;
+import java.util.Collection;
+
 
 @Entity
 @Table(name="users", schema = "public")
-public class User {
+public class User implements UserDetails {
     @Id
     @Column(name = "user_id")
     private String userId;
@@ -17,6 +20,35 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
 
     public String getUserId() {
         return userId;
@@ -28,10 +60,6 @@ public class User {
 
     public String getUsername() {
         return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
