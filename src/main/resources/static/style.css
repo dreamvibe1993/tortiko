@@ -5,6 +5,7 @@
         font-family: 'Raleway', sans-serif;
 }
 
+
 nav{
     display: flex;
     justify-content: space-around;
@@ -270,6 +271,7 @@ span{
     font-size: 12px;
     bottom: 62px;
     position: absolute;
+
 }
 #login{
     left: 50px;

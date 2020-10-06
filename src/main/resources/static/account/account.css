@@ -13,9 +13,10 @@ nav{
   "top top top"
   "account status status"
   "cart shop shop";
+
   /* grid-template-rows: 9.6vh 30.3vh 1fr;
   grid-template-columns: 35vh 1fr 1fr; */
-  grid-template-rows: 77.52px 245.25px 1fr;
+  grid-template-rows: 77.52px 250.25px 1fr;
   grid-template-columns: 283px 1fr 1fr;
   /* grid-template-rows: 8vh 25vh 1fr;
   grid-template-columns: 1fr 1fr 1fr; */ /*just in case*/
@@ -25,8 +26,9 @@ nav{
   align-items: stretch;
   width: 100vw;
   height: 969px;
+  background-image: url("../img/png/cake-2.png");
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
   margin: 0;
 }
 
@@ -71,9 +73,6 @@ nav{
 
 .user-friendly > div {
   background-color: #dbb7ad;
-  background-image: url("../img/png/cake-2.png");
-  background-repeat: repeat;
-  background-position: center;
   border-radius: 10px;
 }
 
@@ -84,6 +83,19 @@ select {
 }
 
 /*account*/
+.tooltip {
+  position: fixed;
+  z-index: 100;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+  animation-name: settingsOpacityIn;
+  animation-duration: 0.2s;
+}
 
 .acc-account {
   display: flex;
@@ -95,17 +107,15 @@ select {
   border-radius: 10px;
   cursor: pointer;
 }
-.acc-accont:hover {
-  background: rgba(222, 222, 222, .8);
-}
+
 
 @keyframes heightTransformDown {
   0% { height: 145px; }
-      100% { height: 193px; }
+      100% { height: 198px; }
 }
 
 @keyframes heightTransformUp {
-  0% { height: 193px; }
+  0% { height: 198px; }
     100% { height: 145px; }
 }
 
@@ -152,12 +162,27 @@ select {
   display: none;
 }
 
-
 .settings {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 12px;
-  justify-content: space-between;
+  height: 43px;
+  justify-content: space-evenly;
 }
+
+.settings img{
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+
+.settings img:hover{
+  position: relative;
+  width: 42px;
+  height: 42px;
+}
+
 
 .user-info {
   display: flex;
@@ -195,11 +220,6 @@ select {
 }
 
 
-.settings img{
-  padding: 8px;
-  width: 40px;
-  height: 40px;
-}
 
 
 
@@ -254,13 +274,13 @@ select {
   border-radius: 5px;
   color: black;
   cursor: pointer;
+  box-shadow: 0px 2px 0px 0px #dbbb4d;
   transition-property: background;
   transition-duration: 0.4s;
 }
 
 .b-st:hover {
-  background: #edca51;
-
+  background: #ffdc2b;
 }
 
 .ord-fin {
@@ -452,9 +472,7 @@ select {
 padding: 2px;
 }
 
-.table-header td {
- border-bottom: 1px solid #f2f0e9;
-}
+
 
 .fstrow-table {
   display: flex;
@@ -470,17 +488,7 @@ padding: 2px;
   margin: 10px;
 }
 
-.scncol-table {
-  border-left: 1px solid #f2f0e9;
-}
 
-.thrdrow-table {
-  border-left: 1px solid #f2f0e9;
-}
-
-.table-footer {
-  border-top: 1px solid #f2f0e9;
-}
 
 /* orderstatus window ends here*/
 

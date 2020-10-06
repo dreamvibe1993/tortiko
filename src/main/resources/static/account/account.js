@@ -112,7 +112,7 @@ window.onclick = function(event) {
 
 
 // techsupport modal chatwindow - inputfield interaction code
-//TODO 'typehere remover code'
+
 
 
 // account heightchanger code
@@ -146,3 +146,53 @@ function transformAccField() {
 }
 transformAccField();
 // account heightchanger code ends here
+
+// tips account frame code
+
+let tooltip;
+
+document.onmouseover = function(event) {
+
+  let anchorElem = event.target.closest('[data-tip]');
+
+  if (!anchorElem) return;
+
+  tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
+}
+
+document.onmouseout = function() {
+
+  if (tooltip) {
+    tooltip.remove();
+    tooltip = false;
+  }
+
+}
+
+
+function showTooltip(anchorElem, data) {
+
+
+  let tooltipElem = document.createElement('div');
+  tooltipElem.className = 'tooltip';
+  tooltipElem.innerHTML = data;
+
+  document.body.append(tooltipElem);
+
+  let coords = anchorElem.getBoundingClientRect();
+
+  let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
+  if (left < 0) left = 0;
+
+  let top = coords.top + anchorElem.offsetHeight + 5;
+  if (top < 0) {
+    top = coords.top + anchorElem.offsetHeight + 5;
+  }
+
+  tooltipElem.style.left = left + 'px';
+  tooltipElem.style.top = top + 'px';
+
+  return tooltipElem;
+}
+
+// tips account frame code ends here
