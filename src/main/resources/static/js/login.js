@@ -25,7 +25,6 @@ function validateRegistration(){
 register_password.onchange = validateRegistration;
 register_confirm_password.onkeyup = validateRegistration;
 
-
 function registerButton() {
     const bodyRegister = {
         username: emailInput.value,
@@ -52,33 +51,36 @@ registerCheckbox.onclick = () => {
 
 function validateLogin(){
   if (!loginEmail.value) {
-    loginEmail.setCustomValidity("This field should be filled");
+    login_email.setCustomValidity("This field should be filled");
   } else {
-      loginEmail.setCustomValidity('');
+      login_email.setCustomValidity("");
   }
-
-  if (!loginPassword.value) {
-    loginPassword.setCustomValidity("This field should be filled");
+  if (loginEmail.value && loginEmail.validity.typeMismatch) {
+    login_email.setCustomValidity("Wrong e-mail format");
   } else {
-      loginPassword.setCustomValidity('');
+      login_email.setCustomValidity("");
+  }
+  if (loginPassword.value == '') {
+    login_password.setCustomValidity("This field should be filled");
+  } else {
+      login_password.setCustomValidity("");
   }
 }
-loginEmail.onchange = validateLogin;
+loginEmail.onchange = () => {
+  let x = checkCookie();
+    x == true ? pastePassword() : console.log('failed');
+  validateLogin();
+};
 loginPassword.onkeyup = validateLogin;
+
 
 // Password login validation form ends here
 
-
-
 function loginButton() {
-
         const bodyLogin = {
             username: loginEmail.value,
             password: loginPassword.value,
         };
-
-
-
         fetch('http://localhost:8080/login', {
             method: 'POST',
             body: JSON.stringify(bodyLogin),
@@ -89,24 +91,42 @@ function loginButton() {
 }
 
 loginSubmitButton.addEventListener('click', function() {
-        (loginEmail.value) && (loginPassword.value) ? loginButton() : validateLogin();
-});
-
-//cookies
-// document.body.onload = () => {
-//   let y = checkCookie()
-//     y = true ? pastePassword() : console.log('failed');
-// }
-
-// TODO: the email is checked for mistakes before saving into cookies. if email is wrong = uncheck the box; 
-
-inputCheckbox.onclick = () => {
-  if (loginPassword.value && loginEmail.value) {
-    setCookie(loginEmail.value, loginPassword.value, 365);
+  if (loginEmail.value && loginPassword.value) {
+    if (loginEmail.validity.valid) {
+      if (inputCheckbox.checked == true) {
+        loginButton();
+        setCookie(user, loginPassword.value, 365);
+      }
+      if (inputCheckbox.checked == false) {
+        loginButton();
+    }
+    } else {
+      validateLogin();
+    }
   } else {
     validateLogin();
-    inputCheckbox.checked = false;
   }
+});
+
+
+// TODO: the email tips if checkbox can't be checked. the algoritm to erase the data from cookies;
+
+inputCheckbox.onchange = () => {
+  if (inputCheckbox.checked) {
+    if (loginPassword.value && loginEmail.value) {
+        if(loginEmail.validity.valid) {
+          inputCheckbox.checked = true;
+          checkCookie();
+        } else {
+          login_email.setCustomValidity("Wrong e-mail format");
+          inputCheckbox.checked = false;
+        }
+    } else {
+      validateLogin();
+      inputCheckbox.checked = false;
+    }
+  }
+  // if (!inputCheckbox.checked)
 }
 
 function pastePassword() {
@@ -132,10 +152,7 @@ function pastePassword() {
   loginPassword.value = p;
 }
 
-loginPassword.onclick = () => {
-  let x = checkCookie();
-    x == true ? pastePassword() : console.log('failed');
-}
+
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
@@ -166,9 +183,9 @@ function checkCookie() {
     if (user != "") {
       return true;
     } else {
-      console.log("memorizing user");
-      user = loginEmail.value;
+      alert("no such user");
       if (loginPassword.value) {
+      user = loginEmail.value;
         if (user != "" && user != null) {
           setCookie(user, loginPassword.value, 30);
         }
@@ -182,7 +199,6 @@ function checkCookie() {
 }
 
 //cookies ends here
-
 
 var x = document.getElementById("login");
 var y = document.getElementById("register");
