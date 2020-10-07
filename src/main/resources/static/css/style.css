@@ -53,6 +53,7 @@ nav{
     transition: all 0.3s ease;
 }
 
+
 @media screen and (max-width: 1024px){
     .nav-links{
         width: 50%;
@@ -109,7 +110,7 @@ nav{
 }
 
 #showcase{
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/img/background.jpg");
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../img/background.jpg");
     height: 92vh;
     background-position: center;
     background-size: cover;

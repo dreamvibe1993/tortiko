@@ -19,11 +19,9 @@ function validatePassword(){
   } else {
       registerCheckbox.setCustomValidity('');
   }
-
 }
-register_password.onchange = validatePassword;
-register_confirm_password.onkeyup = validatePassword;
-
+register_password.onchange = validateRegistration;
+register_confirm_password.onkeyup = validateRegistration;
 
 function registerButton() {
     const bodyRegister = {
@@ -40,12 +38,14 @@ function registerButton() {
 }
 
 registerSubmitButton.addEventListener('click', function() {
-        (passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true) ? registerButton() : validatePassword();
+        (passwordInput.value == passwordInputConfirm.value) && (registerCheckbox.checked == true) ? registerButton() : validateRegistration();
 });
 registerCheckbox.onclick = () => {
     registerCheckbox.setCustomValidity('');
 }
+// Password registration validation form ends here
 
+// Password login validation form
 
 
 
