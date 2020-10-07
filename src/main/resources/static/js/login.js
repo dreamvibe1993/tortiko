@@ -1,14 +1,12 @@
 
 const loginEmail = document.getElementById('login_email');
-const loginPassword = document.getElementById("login_password")
+const loginPassword = document.getElementById("login_password");
 const loginSubmitButton = document.getElementById('login-btn');
 
-const emailInput = document.getElementById('register_email');
-const passwordInput = document.getElementById("register_password")
-const passwordInputConfirm = document.getElementById("register_confirm_password")
+const emailInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const passwordInputConfirm = document.getElementById("register_confirm_password");
 const registerSubmitButton = document.getElementById('register-btn');
-
-// Password validation form
 function validatePassword(){
   if (passwordInput.value != passwordInputConfirm.value) {
     register_confirm_password.setCustomValidity("Passwords Don't Match");
@@ -49,23 +47,6 @@ registerCheckbox.onclick = () => {
 }
 
 
-function loginButton() {
-
-        const bodyLogin = {
-            username: loginEmail.value,
-            password: loginPassword.value,
-        };
-
-        fetch('http://localhost:8080/login', {
-            method: 'POST',
-            body: JSON.stringify(bodyLogin),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-}
-
-loginSubmitButton.addEventListener('click', loginButton);
 
 
 var x = document.getElementById("login");

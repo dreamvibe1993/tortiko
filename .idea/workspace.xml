@@ -198,29 +198,63 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601386329933" />
-    <state width="1493" height="149" key="GridCell.Tab.0.bottom" timestamp="1601982973876">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602014912483">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="149" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601982973876" />
-    <state width="1493" height="149" key="GridCell.Tab.0.center" timestamp="1601982973876">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602014912483" />
+    <state width="1493" height="247" key="GridCell.Tab.0.bottom" timestamp="1602065203451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="149" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601982973876" />
-    <state width="1493" height="149" key="GridCell.Tab.0.left" timestamp="1601982973876">
+    <state width="1493" height="247" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602065203451" />
+    <state width="1493" height="247" key="GridCell.Tab.0.center" timestamp="1602065203451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="149" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601982973876" />
-    <state width="1493" height="149" key="GridCell.Tab.0.right" timestamp="1601982973876">
+    <state width="1493" height="247" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602065203451" />
+    <state width="1493" height="247" key="GridCell.Tab.0.left" timestamp="1602065203451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="149" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601982973876" />
+    <state width="1493" height="247" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602065203451" />
+    <state width="1493" height="247" key="GridCell.Tab.0.right" timestamp="1602065203451">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="247" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602065203451" />
+    <state width="1493" height="22" key="GridCell.Tab.1.bottom" timestamp="1602016610363">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="22" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602016610363" />
+    <state width="1493" height="22" key="GridCell.Tab.1.center" timestamp="1602016610363">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="22" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602016610363" />
+    <state width="1493" height="22" key="GridCell.Tab.1.left" timestamp="1602016610363">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="22" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602016610363" />
+    <state width="1493" height="22" key="GridCell.Tab.1.right" timestamp="1602016610363">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="22" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602016610363" />
     <state x="277" y="0" key="SettingsEditor" timestamp="1601898595620">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601898595620" />
+    <state x="302" y="148" width="931" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602014714420">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="302" y="148" width="931" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1602014714420" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1601979282858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1601979282858" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

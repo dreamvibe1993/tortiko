@@ -48,9 +48,9 @@
             <button type="button" class="login-toggle-btn" onclick="login()">Log In</button>
             <button type="button" class="login-toggle-btn" onclick="register()">Register</button>
         </div>
-        <form id="login" class="input-group">
-            <input id="login_email" type="text" class="input-field" placeholder="Enter E-mail" required>
-            <input id="login_password" type="text" class="input-field" placeholder="Enter Password" required>
+        <form id="login" class="input-group" action="/login" method="post">
+            <input id="username" type="text" class="input-field" placeholder="Enter E-mail" required>
+            <input id="password" type="text" class="input-field" placeholder="Enter Password" required>
             <input id='inputCheckbox' type="checkbox" class="login-checkbox">
             <span>Remember Password</span>
             <button id="login-btn" type="submit" class="submit-btn">Log in</button>
