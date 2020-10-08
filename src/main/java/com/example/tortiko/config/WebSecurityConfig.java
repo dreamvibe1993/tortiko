@@ -20,32 +20,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
-    }
-    @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-            .authorizeRequests()
-                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/api/users/create-user").permitAll()
+        http.authorizeRequests()
+                .antMatchers("/", "/css/**", "/js/**", "/img/**", "/api/users/create-user", "/login").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .formLogin()
                 .loginPage("/")
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/test.html", true)
-                .failureUrl("/fiasko.html")
                 .permitAll()
             .and()
                 .logout()
                 .logoutUrl("/logout")
-                .permitAll();
-
-
+                .permitAll()
+            .and()
+                .csrf().disable();
     }
-
-
-
-
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder);
+    }
 
 }
