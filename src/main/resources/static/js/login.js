@@ -20,8 +20,8 @@ function validatePassword(){
       registerCheckbox.setCustomValidity('');
   }
 }
-register_password.onchange = validateRegistration;
-register_confirm_password.onkeyup = validateRegistration;
+// register_password.onchange = validateRegistration;
+// register_confirm_password.onkeyup = validateRegistration;
 
 function registerButton() {
     const bodyRegister = {
