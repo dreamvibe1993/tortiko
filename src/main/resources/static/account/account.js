@@ -33,7 +33,7 @@ inptContainer.onclick = () => {
 }
 
 sendPlane.onmousedown = () => {
-  let finale = false;
+      let finale = false;
       var str = inptContainer.innerText;
       var msgwidth = document.getElementById('suppMsg').offsetWidth;
       let n = Math.round(msgwidth / 8.6);
@@ -41,6 +41,7 @@ sendPlane.onmousedown = () => {
       let arr = str.split(' ');
       if (str.length <= n) {
         ans += str;
+        finale = ans;
       } else {
         for (let i = 0; i < arr.length; i++) {
           if (arr[i].length > n) {
@@ -59,12 +60,15 @@ sendPlane.onmousedown = () => {
                 arr[i] = '';
               } else {
                 arr[i+1] = `${arr[i]} ${arr[i + 1]}`;
-                arr.shift();
+                arr.splice(i, 1);
               }
             }
             if (arr[i].length == n) {
               ans += `${arr[i]}\n`;
-              arr.shift();
+              arr.splice(i, 1);
+            }
+            if (arr[i] == undefined) {
+              arr[i] = '';
             }
             if (arr[i].length > n) {
               if (arr[i + 1] == undefined) {
@@ -75,7 +79,7 @@ sendPlane.onmousedown = () => {
                 let lastspace = arr[i].lastIndexOf(' ');
                 ans += `${arr[i].slice(0, lastspace)}\n`;
                 arr[i+1] = `${arr[i].slice(lastspace+1)} ${arr[i + 1]}`;
-                arr.shift();
+                arr.splice(i, 1);
               }
             }
           }
@@ -147,51 +151,51 @@ transformAccField();
 // account heightchanger code ends here
 
 // tips account frame code
-
-let tooltip;
-
-document.onmouseover = function(event) {
-
-  let anchorElem = event.target.closest('[data-tip]');
-
-  if (!anchorElem) return;
-
-  tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
-}
-
-document.onmouseout = function() {
-
-  if (tooltip) {
-    tooltip.remove();
-    tooltip = false;
-  }
-
-}
-
-
-function showTooltip(anchorElem, data) {
-
-
-  let tooltipElem = document.createElement('div');
-  tooltipElem.className = 'tooltip';
-  tooltipElem.innerHTML = data;
-
-  document.body.append(tooltipElem);
-
-  let coords = anchorElem.getBoundingClientRect();
-
-  let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
-  if (left < 0) left = 0;
-
-  let top = coords.top + anchorElem.offsetHeight + 5;
-  if (top < 0) {
-    top = coords.top + anchorElem.offsetHeight + 5;
-  }
-
-  tooltipElem.style.left = left + 'px';
-  tooltipElem.style.top = top + 'px';
-
-  return tooltipElem;
-}
+//
+// let tooltip;
+//
+// document.onmouseover = function(event) {
+//
+//   let anchorElem = event.target.closest('[data-tip]');
+//
+//   if (!anchorElem) return;
+//
+//   tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
+// }
+//
+// document.onmouseout = function() {
+//
+//   if (tooltip) {
+//     tooltip.remove();
+//     tooltip = false;
+//   }
+//
+// }
+//
+//
+// function showTooltip(anchorElem, data) {
+//
+//
+//   let tooltipElem = document.createElement('div');
+//   tooltipElem.className = 'tooltip';
+//   tooltipElem.innerHTML = data;
+//
+//   document.body.append(tooltipElem);
+//
+//   let coords = anchorElem.getBoundingClientRect();
+//
+//   let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
+//   if (left < 0) left = 0;
+//
+//   let top = coords.top + anchorElem.offsetHeight + 5;
+//   if (top < 0) {
+//     top = coords.top + anchorElem.offsetHeight + 5;
+//   }
+//
+//   tooltipElem.style.left = left + 'px';
+//   tooltipElem.style.top = top + 'px';
+//
+//   return tooltipElem;
+// }
 
 // tips account frame code ends here
