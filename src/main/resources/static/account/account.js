@@ -1,48 +1,3 @@
-// код для появления статуса заказа
-// function removeOrderModal() {
-//   statusModBox.classList.add('off');
-//   statusModBox.classList.remove('on');
-//   statusModBox.classList.remove('anim');
-//   darken.classList.toggle('off');
-// }
-//
-// function addOrderModal() {
-//   statusModBox.classList.remove('off');
-//   statusModBox.classList.add('on');
-//   darken.classList.toggle('off');
-// }
-//
-//
-// statusModBoxRmv.onclick = () => {
-//   statusModBox.classList.add('anim');
-//   setTimeout(removeOrderModal, 500);
-// }
-//
-// darken.onclick = () => {
-//   statusModBox.classList.add('anim');
-//   setTimeout(removeOrderModal, 500);
-// }
-// window.addEventListener("keydown", function (evt) {
-//   if (statusModBox.classList.contains('on')) {
-//     if (evt.keyCode === 27) {
-//       evt.preventDefault();
-//       statusModBox.classList.add('anim');
-//       setTimeout(remove, 500);
-//     }
-//   }
-// });
-// todo order status summoner code
-
-// function removeItemCart() {
-//   let orderSelect = document.querySelector('select');
-//   if (orderSelect.childNodes.) {
-//     cardButtonRemoves.onclick = () => {
-//       orderSelect.childNodes.selected.remove();
-//     }
-//   }
-// }
-// removeItemCart();
-
 // techsupport modal summoner code
 
 techSummon.onclick = () => {
@@ -193,50 +148,50 @@ transformAccField();
 
 // tips account frame code
 
-// let tooltip;
-//
-// document.onmouseover = function(event) {
-//
-//   let anchorElem = event.target.closest('[data-tip]');
-//
-//   if (!anchorElem) return;
-//
-//   tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
-// }
-//
-// document.onmouseout = function() {
-//
-//   if (tooltip) {
-//     tooltip.remove();
-//     tooltip = false;
-//   }
-//
-// }
-//
-//
-// function showTooltip(anchorElem, data) {
-//
-//
-//   let tooltipElem = document.createElement('div');
-//   tooltipElem.className = 'tooltip';
-//   tooltipElem.innerHTML = data;
-//
-//   document.body.append(tooltipElem);
-//
-//   let coords = anchorElem.getBoundingClientRect();
-//
-//   let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
-//   if (left < 0) left = 0;
-//
-//   let top = coords.top + anchorElem.offsetHeight + 5;
-//   if (top < 0) {
-//     top = coords.top + anchorElem.offsetHeight + 5;
-//   }
-//
-//   tooltipElem.style.left = left + 'px';
-//   tooltipElem.style.top = top + 'px';
-//
-//   return tooltipElem;
-// }
+let tooltip;
+
+document.onmouseover = function(event) {
+
+  let anchorElem = event.target.closest('[data-tip]');
+
+  if (!anchorElem) return;
+
+  tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
+}
+
+document.onmouseout = function() {
+
+  if (tooltip) {
+    tooltip.remove();
+    tooltip = false;
+  }
+
+}
+
+
+function showTooltip(anchorElem, data) {
+
+
+  let tooltipElem = document.createElement('div');
+  tooltipElem.className = 'tooltip';
+  tooltipElem.innerHTML = data;
+
+  document.body.append(tooltipElem);
+
+  let coords = anchorElem.getBoundingClientRect();
+
+  let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
+  if (left < 0) left = 0;
+
+  let top = coords.top + anchorElem.offsetHeight + 5;
+  if (top < 0) {
+    top = coords.top + anchorElem.offsetHeight + 5;
+  }
+
+  tooltipElem.style.left = left + 'px';
+  tooltipElem.style.top = top + 'px';
+
+  return tooltipElem;
+}
 
 // tips account frame code ends here
