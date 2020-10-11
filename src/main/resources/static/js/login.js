@@ -48,16 +48,26 @@ registerCheckbox.onclick = () => {
 }
 
 
-// TODO: cookies deletion function;
+// TODO: login tips!!! emailchanging-bug
 
 //cookies
-inputCheckbox.onclick = () => {
-    if (loginPassword.value && loginEmail.value) {
-      setCookie(loginEmail.value, loginPassword.value, 365);
-    } else {
-      inputCheckbox.checked = false;
+inputCheckbox.onchange = () => {
+    if(!inputCheckbox.checked && loginEmail.value) {
+      deleteCookieEntry(loginEmail.value);
     }
-}
+    if (inputCheckbox.checked && loginEmail.value) {
+      if (loginPassword.value && username.validity.valid) {
+        setCookie(loginEmail.value, loginPassword.value, 365);
+      }
+      if (!username.validity.valid) {
+        loginEmail.setCustomValidity("Неправильно");
+        inputCheckbox.checked = false;
+      }
+      if (!loginPassword.value) {
+        inputCheckbox.checked = false;
+      }
+    }
+  }
 
 function pastePassword() {
     let c = document.cookie;
@@ -78,6 +88,7 @@ function pastePassword() {
     let j = ans.split(' ');
     let p = j[j.indexOf(d) + 1];
     loginPassword.value = p;
+    inputCheckbox.checked = true;
 }
 
 loginPassword.onclick = () => {
@@ -108,24 +119,44 @@ function getCookie(cname) {
     return "";
 }
 
+function deleteCookieEntry(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      console.log(ca);
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          var expires1970 = "expires=Thu, 01 Jan 1970 00:00:01 GMT";
+          var cvalue = 'todelete'
+          ca[i] = " " + cname + "=" + cvalue + ";" + expires1970 + ";path=/";
+          document.cookie = ca.join(';');
+        }
+      }
+      return "";
+}
+
 function checkCookie() {
   if (loginEmail.value) {
     var user = getCookie(`${loginEmail.value}`);
     if (user != "") {
       return true;
     } else {
-      console.log("memorizing user");
+      console.log("nosuchuser");
       user = loginEmail.value;
       if (loginPassword.value) {
           if (user != "" && user != null) {
             setCookie(user, loginPassword.value, 30);
           }
       } else {
-        validateLogin();
+        return;
       }
     }
   } else {
-    validateLogin();
+    return;
   }
 }
 
