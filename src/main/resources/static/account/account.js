@@ -28,11 +28,46 @@ techCross.onclick = () => {
 inptContainer.onclick = () => {
   if (inptContainer.innerHTML == 'Type here') {
     inptContainer.innerHTML = '';
+    inptContainer.addEventListener('keydown', function(e) {
+      if (!e.shiftKey && e.keyCode === 13) {
+        e.preventDefault();
+        sendTheMessage();
+      }
+    });
+    inptContainer.addEventListener('keyup', function(e) {
+      finale = false;
+    });
+    sendPlane.addEventListener('click', sendTheMessage);
+
+    inptContainer.addEventListener('paste', handlePaste);
+
+    function handlePaste (e) {
+        var clipboardData, pastedData;
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        clipboardData = e.clipboardData || window.clipboardData;
+        pastedData = clipboardData.getData('Text');
+
+        inptContainer.innerText = pastedData;
+    }
+
 
   }
-}
+};
 
-sendPlane.onmousedown = () => {
+window.onclick = function(event) {
+  if (event.target.id != 'inptContainer' && inptContainer.innerHTML == '') {
+    inptContainer.innerHTML = 'Type here';
+  }
+};
+
+
+// techsupport modal chatwindow - inputfield interaction code
+
+
+function sendTheMessage() {
       let finale = false;
       var str = inptContainer.innerText;
       var msgwidth = document.getElementById('suppMsg').offsetWidth;
@@ -87,14 +122,11 @@ sendPlane.onmousedown = () => {
         finale = ans;
     }
 
-
-          //str transform block
       if (finale && inptContainer.innerHTML != "Type here") {
       console.log('sending a message');
       chatMsgWindow.insertAdjacentHTML('beforeend', `<div class="chat-second-line"><div id="clientMsg" class="message">${finale}</div></div>`);
       inptContainer.innerHTML = '';
       chatMsgWindow.scrollTop += chatMsgWindow.clientHeight;
-      // e.preventDefault();
     }
 
 };
@@ -102,21 +134,6 @@ sendPlane.onmousedown = () => {
 sendPlane.onmouseup = () => {
   finale = false;
 }
-
-
-// techsupport modal chatwindow - inputfield interaction code
-
-
-window.onclick = function(event) {
-  if (event.target.id != 'inptContainer' && inptContainer.innerHTML == '') {
-    inptContainer.innerHTML = 'Type here';
-  }
-};
-
-
-// techsupport modal chatwindow - inputfield interaction code
-
-
 
 // account heightchanger code
 function transformAccField() {
@@ -152,50 +169,50 @@ transformAccField();
 
 // tips account frame code
 //
-// let tooltip;
-//
-// document.onmouseover = function(event) {
-//
-//   let anchorElem = event.target.closest('[data-tip]');
-//
-//   if (!anchorElem) return;
-//
-//   tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
-// }
-//
-// document.onmouseout = function() {
-//
-//   if (tooltip) {
-//     tooltip.remove();
-//     tooltip = false;
-//   }
-//
-// }
-//
-//
-// function showTooltip(anchorElem, data) {
-//
-//
-//   let tooltipElem = document.createElement('div');
-//   tooltipElem.className = 'tooltip';
-//   tooltipElem.innerHTML = data;
-//
-//   document.body.append(tooltipElem);
-//
-//   let coords = anchorElem.getBoundingClientRect();
-//
-//   let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
-//   if (left < 0) left = 0;
-//
-//   let top = coords.top + anchorElem.offsetHeight + 5;
-//   if (top < 0) {
-//     top = coords.top + anchorElem.offsetHeight + 5;
-//   }
-//
-//   tooltipElem.style.left = left + 'px';
-//   tooltipElem.style.top = top + 'px';
-//
-//   return tooltipElem;
-// }
+let tooltip;
+
+document.onmouseover = function(event) {
+
+  let anchorElem = event.target.closest('[data-tip]');
+
+  if (!anchorElem) return;
+
+  tooltip = showTooltip(anchorElem, anchorElem.dataset.tip);
+}
+
+document.onmouseout = function() {
+
+  if (tooltip) {
+    tooltip.remove();
+    tooltip = false;
+  }
+
+}
+
+
+function showTooltip(anchorElem, data) {
+
+
+  let tooltipElem = document.createElement('div');
+  tooltipElem.className = 'tooltip';
+  tooltipElem.innerHTML = data;
+
+  document.body.append(tooltipElem);
+
+  let coords = anchorElem.getBoundingClientRect();
+
+  let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
+  if (left < 0) left = 0;
+
+  let top = coords.top + anchorElem.offsetHeight + 5;
+  if (top < 0) {
+    top = coords.top + anchorElem.offsetHeight + 5;
+  }
+
+  tooltipElem.style.left = left + 'px';
+  tooltipElem.style.top = top + 'px';
+
+  return tooltipElem;
+}
 
 // tips account frame code ends here
