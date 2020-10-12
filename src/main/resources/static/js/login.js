@@ -52,22 +52,32 @@ registerCheckbox.onclick = () => {
 
 //cookies
 inputCheckbox.onchange = () => {
-    if(!inputCheckbox.checked && loginEmail.value) {
-      deleteCookieEntry(loginEmail.value);
-    }
-    if (inputCheckbox.checked && loginEmail.value) {
+
+  if (inputCheckbox.checked && loginEmail.value) {
       if (loginPassword.value && username.validity.valid) {
         setCookie(loginEmail.value, loginPassword.value, 365);
+        return;
+      } else {
+        inputCheckbox.checked = false;
+        return;
       }
       if (!username.validity.valid) {
-        loginEmail.setCustomValidity("Неправильно");
         inputCheckbox.checked = false;
+        return;
       }
       if (!loginPassword.value) {
         inputCheckbox.checked = false;
+        return;
       }
-    }
   }
+  if(!inputCheckbox.checked && loginEmail.value) {
+      deleteCookieEntry(loginEmail.value);
+      return;
+  } else {
+      inputCheckbox.checked = false;
+      return;
+  }
+}
 
 function pastePassword() {
     let c = document.cookie;
@@ -130,13 +140,12 @@ function deleteCookieEntry(cname) {
           c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-          var expires1970 = "expires=Thu, 01 Jan 1970 00:00:01 GMT";
           var cvalue = 'todelete'
-          ca[i] = " " + cname + "=" + cvalue + ";" + expires1970 + ";path=/";
-          document.cookie = ca.join(';');
+          var d = new Date(0);
+          var expires = "expires=" + d;
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
       }
-      return "";
 }
 
 function checkCookie() {
