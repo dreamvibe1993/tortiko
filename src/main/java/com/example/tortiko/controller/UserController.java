@@ -4,6 +4,7 @@ import com.example.tortiko.model.User;
 import com.example.tortiko.model.UserDTO;
 import com.example.tortiko.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +39,11 @@ public class UserController {
     @DeleteMapping("api/users/{userId}")
     public void deleteUser(@PathVariable("userId") User user) {
         userRepository.delete(user);
+    }
+    @RequestMapping(value = "/username", method = RequestMethod.GET)
+    @ResponseBody
+    public String currentUserName(Authentication authentication) {
+        return authentication.getName();
     }
 
 }

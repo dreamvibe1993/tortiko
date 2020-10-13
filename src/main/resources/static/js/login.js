@@ -8,6 +8,30 @@ const passwordInput = document.getElementById("register_password")
 const passwordInputConfirm = document.getElementById("register_confirm_password")
 const registerSubmitButton = document.getElementById('register-btn');
 
+//test case start
+const logoutNav = document.querySelector('.logout-nav');
+const loginNav = document.querySelector('.login-nav');
+
+
+function checkIfLogged() {
+    fetch('http://localhost:8080/username')
+        .then(response => response.json())
+        .then(username => usernameCheck(username))
+        .catch(logoutHandle())
+}
+checkIfLogged();
+
+function usernameCheck(username) {
+    if(username != null && username != ""){
+        logoutNav.classList.remove('hide');
+        loginNav.classList.add('hide');
+    }
+}
+function logoutHandle() {
+    loginNav.classList.remove('hide');
+    logoutNav.classList.add('hide');
+}
+//test case end
 
 function validateRegistration(){
     if (passwordInput.value != passwordInputConfirm.value) {
